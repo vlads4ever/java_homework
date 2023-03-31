@@ -12,21 +12,26 @@ public class HomeWork {
         strings.add("-5");
         strings.add("my_string");
 
-//        removeIntegers(strings);
-//        System.out.println(strings); // [string, my_string]
+        removeIntegers(strings);
+        System.out.println(strings); // [string, my_string]
 
-        removeEvenNumber(strings);
-        System.out.println(strings); // [string, -5, my_string]
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(12);
+        numbers.add(23);
+        numbers.add(-7);
+        numbers.add(-16);
+
+        removeEvenNumber(numbers);
+        System.out.println(numbers); // [23, -7]
     }
 
-    static void removeEvenNumber(List<String> numbers) {
+    static void removeEvenNumber(List<Integer> numbers) {
         // TODO: 31.03.2023 Удалить все четные элементы из списка
-        Iterator<String> iterator = numbers.iterator();
+        Iterator<Integer> iterator = numbers.iterator();
         while (iterator.hasNext()) {
-            String next = iterator.next();
+            Integer next = iterator.next();
             try {
-                int number = Integer.parseInt(next);
-                if (number % 2 == 0) {
+                if (next % 2 == 0) {
                     iterator.remove();
                 }
             } catch (NumberFormatException e) {
