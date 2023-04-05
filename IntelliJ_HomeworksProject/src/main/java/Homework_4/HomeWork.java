@@ -14,9 +14,16 @@ public class HomeWork {
                 if (list.size() == 0) {
                     System.out.println("Список пуст.");
                 } else {
-                    Deque<String> deque = new ArrayDeque<>(list);
-                    while (deque.peekLast() != null) {
-                        System.out.print(deque.removeLast() + " ");
+                    // Вариант с конвертацией списка в очередь
+//                    Deque<String> deque = new ArrayDeque<>(list);
+//                    while (deque.peekLast() != null) {
+//                        System.out.print(deque.removeLast() + " ");
+//                    }
+
+                    // Вариант с использованием обратного итерирования в ListIterator
+                    ListIterator<String> lIt = list.listIterator(list.size());
+                    while (lIt.hasPrevious()) {
+                        System.out.println(lIt.previous() + " ");
                     }
                     System.out.println();
                 }
