@@ -11,9 +11,14 @@ public class HomeWork {
         while (!(userInput = sc.nextLine()).equals("exit")) {
             if (userInput.equals("print")) {
                 // TODO: выводим все предыдущие строки в обратном порядке
-                Deque<String> deque = new ArrayDeque<>(list);
-                while (deque.peekLast() != null) {
-                    System.out.println(deque.removeLast());
+                if (list.size() == 0) {
+                    System.out.println("Список пуст.");
+                } else {
+                    Deque<String> deque = new ArrayDeque<>(list);
+                    while (deque.peekLast() != null) {
+                        System.out.print(deque.removeLast() + " ");
+                    }
+                    System.out.println();
                 }
             } else if (userInput.equals("revert")) {
                 // TODO: удаляем последнюю введеную строку
@@ -21,7 +26,7 @@ public class HomeWork {
                     list.remove(list.size() - 1);
                     System.out.println("Последний элемент удален.");
                 } catch (IndexOutOfBoundsException  a) {
-                    System.out.println("Нечего удалять.");
+                    System.out.println("Список пуст.");
                 }
             } else {
                 // TODO: вносим строку в список
