@@ -24,7 +24,7 @@ public class HomeWork {
         // Открывающуюся скобку вносим в Deque (insertFirst)
         // Если встретилась закрывающаяся скобка, то (Deque#pollFirst) и сравниваем ее с встретившейся
 
-        Map<Character,Character> parDict = new HashMap<>(3);
+        Map<Character,Character> parDict = new HashMap<>();
         parDict.put(')', '(');
         parDict.put(']', '[');
         parDict.put('}', '{');
