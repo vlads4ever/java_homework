@@ -59,7 +59,7 @@ public class Employee {
     }
 
     public boolean olderThan(Employee e) {
-        return this.age > e.age;
+        return age > e.age;
     }
 
     @Override
@@ -70,7 +70,9 @@ public class Employee {
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Employee employee) {
-            return firstName.equals(employee.firstName) && lastName.equals(employee.lastName);
+            return firstName.equals(employee.firstName) &&
+                    lastName.equals(employee.lastName) &&
+                     age == employee.age;
         }
         return false;
     }
