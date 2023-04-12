@@ -10,6 +10,12 @@ public class Employee {
     private int age;
     private double salary;
 
+    /**
+     * @param firstName  Имя
+     * @param lastName  Фамилия
+     * @param age  Возраст
+     * @param salary  Зарплата
+     */
     public Employee(String firstName, String lastName, int age, double salary) {
         this.empID = ++counter;
         this.firstName = firstName;
@@ -18,10 +24,21 @@ public class Employee {
         this.salary = salary;
     }
 
+    /**
+     * @param firstName  Имя
+     * @param lastName  Фамилия
+     * @param age  Возраст
+     */
     public Employee(String firstName, String lastName, int age) {
         this (firstName, lastName, age, 50.0);
     }
 
+    /**
+     * Имя - Неизвестно
+     * Фамилия - Неизвестно
+     * Возраст - 0
+     * Зарплата - 0.0
+     */
     public Employee() {
         this ("Неизвестно", "Неизвестно", 0, 0.0);
     }
